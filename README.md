@@ -26,7 +26,7 @@ Changing numeric inputs does not call the LLM again. Changing descriptions requi
 
 ### PDF reports as input
 
-Attach up to three text-based PDFs, each at most 10 pages, 5 MB, and 40,000 extracted characters (60,000 combined). You can leave the text fields empty if a report describes both the current work and proposed AI feature. Preview the extracted text before analyzing. Text is extracted on the local server and sent to Groq only when Analyze is clicked. Password-protected, scanned/image pages, corrupt files, and over-limit reports return explicit errors rather than being silently truncated. OCR is not included. Model analysis should reference document names/pages where possible; interpretation still needs review.
+Attach up to three text-based PDFs, each at most 10 pages, 5 MB, and 40,000 extracted characters (60,000 combined). You can leave the text fields empty if a report describes both the current work and proposed AI feature. Preview the extracted text before analyzing. Text is extracted by the backend and sent to Groq only when Analyze is clicked. Password-protected, scanned/image pages, corrupt files, and over-limit reports return explicit errors rather than being silently truncated. OCR is not included. Model analysis should reference document names/pages where possible; interpretation still needs review.
 
 The exported PDF is recomputed on the server from the reviewed inputs, so client-supplied totals cannot alter its verdict.
 
