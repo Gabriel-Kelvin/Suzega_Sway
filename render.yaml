@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: suzega-sway
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: GROQ_DAILY_CALL_LIMIT
+        value: "30"
+      - key: DATABASE_PATH
+        value: /tmp/sway/quota.db
